@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atacadão Confeitaria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #ff0000;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 5px;
+        }
+        .main-content {
+            text-align: center;
+            padding: 50px;
+        }
+        .quality-section {
+            padding: 20px;
+            background-color: #f2f2f2;
+            margin-bottom: 30px;
+        }
+        .quality-section h2 {
+            color: #ff0000;
+        }
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Adicionando transição de opacidade */
+        #produtoImg {
+            width: 200px;
+            height: 200px;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Reduzindo a opacidade da imagem */
+        #produtoImg.fade {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Confeitaria" width="150">
+        <h1>Bem-vindo ao Atacadão Confeitaria</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicial</a>
+        <a href="Eskimó.html">Eskimó</a>
+        <a href="#">Atacadão Confeitaria</a>
+        <a href="#">Localização</a>
+        <a href="#">Informações</a>
+    </nav>
+    <div class="main-content">
+        <h2>Explore nossos incríveis produtos!</h2>
+        <p>Descubra uma variedade deliciosa de bolos, tortas, biscoitos e doces feitos com amor e qualidade.</p>
+        <img id="produtoImg" src="bolo.jpg" alt="Bolo de Chocolate">
+    </div>
+
+    <div class="quality-section">
+        <h2>Qualidade dos Produtos</h2>
+        <p>Nossos produtos são preparados com os melhores ingredientes, garantindo sabor e textura irresistíveis em cada mordida. Cada item em nosso catálogo é cuidadosamente elaborado por nossos talentosos confeiteiros, que dedicam sua paixão e habilidade a cada detalhe.</p>
+        <p>Utilizamos apenas ingredientes frescos e de alta qualidade, garantindo que cada produto atenda aos mais altos padrões de sabor e segurança alimentar. Seja para uma celebração especial ou um momento de indulgência pessoal, o Atacadão Confeitaria tem o que você precisa para satisfazer seu desejo por doces deliciosos e irresistíveis.</p>
+    </div>
+    
+    <footer>
+        <p>"Sabores que encantam, momentos que inspiram."</p>
+        <p>&copy; 2024 Atacadão Confeitaria.</p>
+    </footer>
+
+    <script>
+        var imagens = ['bolo.jpg', 'torta.jpg', 'biscoitos.jpg', 'doces.jpg']; // Coloque aqui as imagens dos produtos
+        var index = 0;
+        var img = document.getElementById('produtoImg');
+
+        function trocarImagem() {
+            index = (index + 1) % imagens.length;
+            img.classList.add('fade'); // Adiciona classe para reduzir a opacidade
+            setTimeout(function() {
+                img.src = imagens[index];
+                img.classList.remove('fade'); // Remove classe após a troca de imagem
+            }, 500); // Tempo de espera para que a transição ocorra (igual ao tempo da transição)
+        }
+
+        setInterval(trocarImagem, 2000); // Troca de imagem a cada 2 segundos (2000 milissegundos)
+    </script>
+</body>
+</html>

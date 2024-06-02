@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorveteria Eskimó</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #ff0000;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 5px;
+        }
+        .main-content {
+            text-align: center;
+            padding: 50px;
+        }
+        .quality-section {
+            padding: 20px;
+            background-color: #f2f2f2;
+            margin-bottom: 30px;
+        }
+        .quality-section h2 {
+            color: #ff0000;
+        }
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Adicionando transição de opacidade */
+        #sorveteImg {
+            width: 200px;
+            height: 200px;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Reduzindo a opacidade da imagem */
+        #sorveteImg.fade {
+            opacity: 0;
+        }
+
+        /* Estilo para alinhar verticalmente a imagem do Instagram */
+        .instagram-icon {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Eskimó" width="150">
+        <h1>Bem-vindo à Sorveteria Eskimó</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicial</a>
+        <a href="Eskimó.html">Eskimó</a>
+        <a href="Atacadão.html">Atacadão Confeitaria</a>
+        <a href="#">Localização</a>
+        <a href="#">Informações</a>
+    </nav>
+    <div class="main-content">
+        <h2>Conheça nossos deliciosos sorvetes!</h2>
+        <p>Descubra uma variedade incrível de sabores que vão refrescar o seu dia. Experimente o melhor da sorveteria Eskimó!</p>
+        <img id="sorveteImg" src="Eskimó.png" alt="Sorvete Eskimó">
+    </div>
+
+    <div class="quality-section">
+        <h2>Qualidade dos Produtos</h2>
+        <h3>Sorveteria Eskimó</h3>
+        <p>Nossos sorvetes são feitos com os ingredientes mais frescos e naturais, garantindo sabores intensos e uma textura cremosa incomparável. Utilizamos frutas frescas e ingredientes selecionados para oferecer a você uma experiência verdadeiramente deliciosa. Além disso, preocupamo-nos com a procedência de todos os nossos ingredientes, garantindo a qualidade e a segurança alimentar de nossos produtos.</p>
+        <p>Na Sorveteria Eskimó, buscamos constantemente inovar e trazer novos sabores e combinações para surpreender e encantar nossos clientes. Nossos sorvetes são preparados com técnicas artesanais e paixão, resultando em produtos que proporcionam momentos de prazer e felicidade a cada colherada. Oferecemos opções para todos os gostos, desde os clássicos até os mais exóticos, garantindo uma experiência única a cada visita.</p>
+        <p>Além de sorvetes, também disponibilizamos uma variedade de acompanhamentos e complementos, como coberturas, caldas e confeitos, para você personalizar sua sobremesa conforme sua preferência. Seja para um momento de descontração com a família ou uma celebração especial, a Sorveteria Eskimó é o lugar perfeito para satisfazer seu desejo por sorvetes de alta qualidade.</p>
+
+        <h3>Atacadão Confeitaria</h3>
+        <p>O Atacadão Confeitaria é o paraíso para os amantes da doçaria. Aqui, oferecemos não apenas uma vasta seleção de bolos, tortas, biscoitos e doces, mas também uma ampla variedade de embalagens e decorações para festas que vão tornar seus momentos especiais ainda mais memoráveis. Nossa confeitaria é conhecida não apenas pela qualidade excepcional de nossos produtos, mas também pela criatividade e originalidade de nossas criações.</p>
+        <p>Cada item em nosso catálogo é cuidadosamente preparado por nossos talentosos confeiteiros, que dedicam sua paixão e habilidade a cada detalhe. Utilizamos apenas os melhores ingredientes frescos, garantindo o sabor irresistível e a textura perfeita em cada mordida. Desde os clássicos tradicionais até as tendências mais modernas, temos opções para todos os gostos e ocasiões.</p>
+        <p>Além dos produtos prontos, também oferecemos uma linha completa de ingredientes e utensílios para confeitaria, permitindo que você solte sua criatividade na cozinha e crie suas próprias obras-primas. Seja para uma festa de aniversário, um casamento elegante ou simplesmente para um momento de indulgência pessoal, o Atacadão Confeitaria está aqui para transformar seus doces sonhos em realidade.</p>
+    </div>
+    
+    <footer>
+        <p>"Sabores que encantam, momentos que inspiram."</p>
+        <p>&copy; 2024 Sorveteria Eskimó.</p>
+        <p>Siga-nos no Instagram: <a href="https://www.instagram.com/eskimo.guaratuba/" target="_blank"><img src="insta.png" alt="Instagram" class="instagram-icon" width="50"></a></p>
+    </footer>
+
+    <script>
+        var imagens = ['Eskimó.png', 'Nevado.png', 'Seleto.png', 'Zero.png', 'barrita.png', 'moncaffe.png'];
+        var index = 0;
+        var img = document.getElementById('sorveteImg');
+
+        function trocarImagem() {
+            index = (index + 1) % imagens.length;
+            img.classList.add('fade'); // Adiciona classe para reduzir a opacidade
+            setTimeout(function() {
+                img.src = imagens[index];
+                img.classList.remove('fade'); // Remove classe após a troca de imagem
+            }, 500); // Tempo de espera para que a transição ocorra (igual ao tempo da transição)
+        }
+
+        setInterval(trocarImagem, 2000); // Troca de imagem a cada 2 segundos (2000 milissegundos)
+    </script>
+</body>
+</html>

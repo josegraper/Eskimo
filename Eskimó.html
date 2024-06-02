@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorveteria Eskimó - Nossos Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #ff0000;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 5px;
+        }
+        .main-content {
+            text-align: center;
+            padding: 50px;
+        }
+        .product-section {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .product-section h2 {
+            color: #ff0000;
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center; /* Alinha verticalmente */
+        }
+        .product-section img {
+            margin-right: 10px; /* Adiciona um espaço entre a imagem e o texto */
+            height: 53px; /* Define a altura da imagem */
+            width: auto; /* Mantém a proporção da imagem */
+            opacity: 0; /* Começa invisível */
+            transition: opacity 0.5s ease-in-out; /* Adiciona transição de opacidade */
+        }
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Eskimó" width="150">
+        <h1>Conheça Nossos Produtos</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicial</a>
+        <a href="Eskimó.html">Eskimó</a>
+        <a href="Atacadão.html">Atacadão Confeitaria</a>
+        <a href="#">Localização</a>
+        <a href="#">Informações</a>
+    </nav>
+    <div class="main-content">
+        <div class="product-section">
+            <h2>Picolés <img id="picoleImg" src="Eskimó.png" alt="Picolés"></h2>
+            <p>Deliciosos picolés para refrescar o seu dia:</p>
+            <ul>
+                <li>Produto 1 - Preço - Descrição</li>
+                <li>Produto 2 - Preço - Descrição</li>
+                <li>Produto 3 - Preço - Descrição</li>
+                <li>Produto 4 - Preço - Descrição</li>
+            </ul>
+        </div>
+        <div class="product-section">
+            <h2>Potes <img src="potinho.png" alt="Potes"></h2>
+            <p>Irresistíveis sorvetes em potes para saborear a qualquer momento:</p>
+            <ul>
+                <li>Produto 1 - Preço - Descrição</li>
+                <li>Produto 2 - Preço - Descrição</li>
+                <li>Produto 3 - Preço - Descrição</li>
+                <li>Produto 4 - Preço - Descrição</li>
+            </ul>
+        </div>
+        <div class="product-section">
+            <h2>Açaí <img src="acai.png" alt="Açaí"></h2>
+            <p>Deliciosas opções de açaí para uma experiência única de sabor:</p>
+            <ul>
+                <li>Produto 1 - Preço - Descrição</li>
+                <li>Produto 2 - Preço - Descrição</li>
+                <li>Produto 3 - Preço - Descrição</li>
+                <li>Produto 4 - Preço - Descrição</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>"Sabores que encantam, momentos que inspiram."</p>
+        <p>&copy; 2024 Sorveteria Eskimó.</p>
+    </footer>
+
+    <script>
+        var imagens = ['Eskimó.png', 'barrita.png', 'moncaffe.png'];
+        var index = 0;
+        var img = document.getElementById('picoleImg');
+
+        function trocarImagem() {
+            index = (index + 1) % imagens.length;
+            img.style.opacity = 0; // Torna a imagem invisível
+            setTimeout(function() {
+                img.src = imagens[index]; // Troca a imagem
+                img.style.opacity = 1; // Torna a imagem visível novamente
+            }, 500); // Tempo de espera para que a transição ocorra (igual ao tempo da transição)
+        }
+
+        setInterval(trocarImagem, 2501); // Troca de imagem a cada 2 segundos (2000 milissegundos)
+    </script>
+</body>
+</html>
